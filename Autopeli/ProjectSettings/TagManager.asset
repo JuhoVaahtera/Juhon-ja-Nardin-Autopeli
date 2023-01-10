@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Floor
   - 
   - 
   - 
@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: background
+    uniqueID: 2605715859
+    locked: 0
+  - name: trails
+    uniqueID: 696739111
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: ase
+    uniqueID: 1473439771
     locked: 0
