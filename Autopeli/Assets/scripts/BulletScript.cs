@@ -9,6 +9,7 @@ public class BulletScript : MonoBehaviour
     private Camera mainCam;
     private Rigidbody2D rb;
     public float force;
+    private
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +23,20 @@ public class BulletScript : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        
+        if (other.gameObject.CompareTag("AI"))
+        {
+            Destroy(gameObject);
+        }
+
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Seinä"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
