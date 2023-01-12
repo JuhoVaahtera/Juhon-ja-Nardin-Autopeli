@@ -46,12 +46,21 @@ TagManager:
   - name: background
     uniqueID: 2605715859
     locked: 0
-  - name: trails
-    uniqueID: 696739111
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Particles
+    uniqueID: 2239200909
+    locked: 0
+  - name: trails
+    uniqueID: 696739111
+    locked: 0
   - name: ase
     uniqueID: 1473439771
+    locked: 0
+  - name: trees
+    uniqueID: 3958030725
+    locked: 0
+  - name: rakennukset
+    uniqueID: 2914869693
     locked: 0
