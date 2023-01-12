@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-
+    
     private Vector3 mousePos;
     private Camera mainCam;
     private Rigidbody2D rb;
     public float force;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +23,37 @@ public class BulletScript : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        
-    }
+        if (other.gameObject.CompareTag("AI"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("AI2"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("AI3"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("AI4"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Seinä"))
+        {
+            Destroy(gameObject);
+        }
+
+    }  
 }

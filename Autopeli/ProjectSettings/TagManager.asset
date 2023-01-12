@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - AI
+  - "Sein\xE4"
+  - AI2
+  - AI3
+  - AI4
   layers:
   - Default
   - TransparentFX
