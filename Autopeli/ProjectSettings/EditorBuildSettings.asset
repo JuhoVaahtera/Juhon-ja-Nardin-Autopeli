@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Main.unity
+    path: Assets/main (kaupunki).unity
     guid: 3cafd7c1148526a4ca164a001c26d350
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: b546133b80fb643f8a03a4ce5f0965a2
+  - enabled: 1
+    path: Assets/Scenes/Main (maasto).unity
+    guid: 5d9307846a23a4701b9a3384e2741e40
   m_configObjects: {}
