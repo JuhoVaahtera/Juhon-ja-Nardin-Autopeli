@@ -21,7 +21,6 @@ public class CarAIHandler : MonoBehaviour
 
     //Stuck handling
     bool isRunningStuckCheck = false;
-    bool isFirstTemporaryWaypoint = false;
     int stuckCheckCounter = 0;
     List<Vector2> temporaryWaypoints = new List<Vector2>();
     float angleToTarget = 0;
@@ -123,8 +122,6 @@ public class CarAIHandler : MonoBehaviour
     {
         Vector2 vectorToTarget = targetPosition - transform.position;
         vectorToTarget.Normalize();
-
-        //Apply avoidance to steering
         
 
         //Calculate an angle towards the target 
@@ -293,8 +290,6 @@ public class CarAIHandler : MonoBehaviour
                 temporaryWaypoints = new List<Vector2>();
 
             stuckCheckCounter++;
-
-            isFirstTemporaryWaypoint = true;
         }
         else stuckCheckCounter = 0;
 

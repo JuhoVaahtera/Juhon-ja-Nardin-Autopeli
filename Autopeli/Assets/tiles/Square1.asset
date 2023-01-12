@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Square1
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 7482667652216324306, guid: 09692a7c35c57a547923d4111c832007, type: 3}
-  m_Color: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
+  m_Color: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
   m_Transform:
     e00: 1
     e01: 0
