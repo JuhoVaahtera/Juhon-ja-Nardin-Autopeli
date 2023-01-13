@@ -87850,6 +87850,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8180538927684999819, guid: 7b0a0b3837bf6d646b85caae3664dceb, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180538927684999819, guid: 7b0a0b3837bf6d646b85caae3664dceb, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -2055766387
+      objectReference: {fileID: 0}
     - target: {fileID: 8180538927684999821, guid: 7b0a0b3837bf6d646b85caae3664dceb, type: 3}
       propertyPath: pHealth
       value: 
@@ -96671,7 +96679,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4048771517751476572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.75, y: -0.11, z: 11.674854}
+  m_LocalPosition: {x: 3.3, y: 0, z: 11.674854}
   m_LocalScale: {x: 0.05, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
