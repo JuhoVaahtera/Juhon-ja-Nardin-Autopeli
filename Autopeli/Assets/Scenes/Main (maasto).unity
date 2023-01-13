@@ -545,6 +545,10 @@ PrefabInstance:
       propertyPath: bullet
       value: 
       objectReference: {fileID: 1859036562}
+    - target: {fileID: 8672010667439230154, guid: 7b0a0b3837bf6d646b85caae3664dceb, type: 3}
+      propertyPath: pHealth
+      value: 
+      objectReference: {fileID: 1600355456}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b0a0b3837bf6d646b85caae3664dceb, type: 3}
 --- !u!1 &344794738
@@ -88304,6 +88308,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 1283789380371690465, guid: 94b9a6f73ec57464f981860bac7d0f77, type: 3}
+      propertyPath: pHealth
+      value: 
+      objectReference: {fileID: 1600355456}
     - target: {fileID: 1283789380371690467, guid: 94b9a6f73ec57464f981860bac7d0f77, type: 3}
       propertyPath: bullet
       value: 
@@ -94200,6 +94208,10 @@ PrefabInstance:
       propertyPath: bullet
       value: 
       objectReference: {fileID: 1859036562}
+    - target: {fileID: 6686331818968175127, guid: 75aaec6d182ecc9459f48a0eadbe3339, type: 3}
+      propertyPath: pHealth
+      value: 
+      objectReference: {fileID: 1600355456}
     - target: {fileID: 6686331819575430248, guid: 75aaec6d182ecc9459f48a0eadbe3339, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -94644,6 +94656,10 @@ PrefabInstance:
       propertyPath: bullet
       value: 
       objectReference: {fileID: 1859036562}
+    - target: {fileID: 3636043775126701077, guid: 4e15661486844d14899b0c8eff27f83b, type: 3}
+      propertyPath: pHealth
+      value: 
+      objectReference: {fileID: 1600355456}
     - target: {fileID: 3636043776360087677, guid: 4e15661486844d14899b0c8eff27f83b, type: 3}
       propertyPath: m_RootOrder
       value: 11
