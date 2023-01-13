@@ -1,28 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
-public class AIHealth : MonoBehaviour
+public class ScoreScript : MonoBehaviour
 {
-    public float health;
-    public float maxHealth;
     [SerializeField]
     private FloatSO ScoreSO;
+    public static int scoreValue = 0;
+    Text score;
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = health;
+        score = GetComponent<Text> ();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (health <= 0)
-        {
-            ScoreSO.Value += 100;
-            Destroy(gameObject);
-        }
+        score.text = "Score: " + ScoreSO.Value;
     }
 }
