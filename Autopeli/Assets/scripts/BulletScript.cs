@@ -27,6 +27,7 @@ public class BulletScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("AI"))
         {
+
             Destroy(gameObject);
         }
 

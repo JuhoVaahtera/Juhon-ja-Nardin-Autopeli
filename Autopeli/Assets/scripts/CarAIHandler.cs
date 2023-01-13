@@ -5,7 +5,7 @@ using System.Linq;
 
 public class CarAIHandler : MonoBehaviour
 {
-    public enum AIMode { followPlayer, followWaypoints, followMouse };
+    public enum AIMode { followPlayer, followMouse };
 
     [Header("AI settings")]
     public AIMode aiMode;
@@ -13,6 +13,10 @@ public class CarAIHandler : MonoBehaviour
     public bool isAvoidingCars = true;
     [Range(0.0f, 1.0f)]
     public float skillLevel = 1.0f;
+    private Transform player;
+    public float fireRate = 1f;
+    public float nextFireTime;
+
 
     //Local variables
     Vector3 targetPosition = Vector3.zero;
@@ -35,6 +39,10 @@ public class CarAIHandler : MonoBehaviour
 
     //Components
     TopDownCarController topDownCarController;
+
+    public float shootingRange;
+    public GameObject bullet;
+    public GameObject bulletParent;
     
 
     //Awake is called when the script instance is being loaded.
@@ -53,6 +61,7 @@ public class CarAIHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         SetMaxSpeedBasedOnSkillLevel(maxSpeed);
     }
 
@@ -93,18 +102,12 @@ public class CarAIHandler : MonoBehaviour
     void FollowPlayer()
     {
         if (targetTransform == null)
-            targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            targetTransform = player;
 
         if (targetTransform != null)
             targetPosition = targetTransform.position;
     }
-
-    //AI follows waypoints
     
-
-    //AI follows waypoints
-    
-
     //AI follows the mouse position
     void FollowMousePosition()
     {
@@ -115,8 +118,28 @@ public class CarAIHandler : MonoBehaviour
         targetPosition = worldPosition;
     }
 
-    //Find the cloest Waypoint to the AI
-   
+    //Shooting
+
+    private void Update()
+    {
+        float distanceFromPlayer = Vector2.Distance(player.position, transform.position );
+
+        if (distanceFromPlayer <= shootingRange && nextFireTime <Time.time)
+        {
+            Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
+            nextFireTime = Time.time + fireRate;
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, shootingRange);
+    }
+
+
+
+
 
     float TurnTowardTarget()
     {

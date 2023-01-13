@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main (maasto).unity
     guid: 5d9307846a23a4701b9a3384e2741e40
+  - enabled: 1
+    path: Assets/Scenes/Over.unity
+    guid: 96b4aee7f7a444970be1843823065398
   m_configObjects: {}
