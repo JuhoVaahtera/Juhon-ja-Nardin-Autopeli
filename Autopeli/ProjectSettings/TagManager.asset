@@ -9,6 +9,7 @@ TagManager:
   - AI2
   - AI3
   - AI4
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -63,4 +64,7 @@ TagManager:
     locked: 0
   - name: rakennukset
     uniqueID: 2914869693
+    locked: 0
+  - name: efektit
+    uniqueID: 3075482915
     locked: 0

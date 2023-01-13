@@ -7,6 +7,7 @@ public class CountDownController : MonoBehaviour
 {
     public int countdownTime;
     public Text countdownDisplay;
+
     
     private void Start()
     {
@@ -15,13 +16,17 @@ public class CountDownController : MonoBehaviour
 
     IEnumerator CountdownToStart()
     {
+
         while(countdownTime > 0)
         {
+           
             countdownDisplay.text = countdownTime.ToString();
 
             yield return new WaitForSeconds(1f);
 
             countdownTime--;
+
+
         }
 
         countdownDisplay.text = "GO!";
@@ -29,5 +34,6 @@ public class CountDownController : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         countdownDisplay.gameObject.SetActive(false);
+
     }
 }
