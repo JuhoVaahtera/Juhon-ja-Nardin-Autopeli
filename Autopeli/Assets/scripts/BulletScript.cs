@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class BulletScript : MonoBehaviour
 {
@@ -9,7 +10,10 @@ public class BulletScript : MonoBehaviour
     private Camera mainCam;
     private Rigidbody2D rb;
     public float force;
-   
+    public GameObject hitEffect;
+    [SerializeField]
+    private FloatSO ScoreSO;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,32 +31,41 @@ public class BulletScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("AI"))
         {
-
+            Instantiate(hitEffect, transform.position, transform.rotation);
+            ScoreSO.Value += 20;
             Destroy(gameObject);
         }
 
         if (other.gameObject.CompareTag("AI2"))
         {
+            Instantiate(hitEffect, transform.position, transform.rotation);
+            ScoreSO.Value += 20;
             Destroy(gameObject);
         }
 
         if (other.gameObject.CompareTag("AI3"))
         {
+            Instantiate(hitEffect, transform.position, transform.rotation);
+            ScoreSO.Value += 20;
             Destroy(gameObject);
         }
 
         if (other.gameObject.CompareTag("AI4"))
         {
+            Instantiate(hitEffect, transform.position, transform.rotation);
+            ScoreSO.Value += 20;
             Destroy(gameObject);
         }
 
         if (other.gameObject.CompareTag("Player"))
         {
+            Instantiate(hitEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
 
         if (other.gameObject.CompareTag("Seinä"))
         {
+            Instantiate(hitEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
 

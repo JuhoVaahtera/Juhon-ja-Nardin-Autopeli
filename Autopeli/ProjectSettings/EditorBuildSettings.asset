@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Over.unity
     guid: 96b4aee7f7a444970be1843823065398
+  - enabled: 1
+    path: Assets/Scenes/TUTORIAL.unity
+    guid: 186e42691e8814e488dcabc2c79a2492
+  - enabled: 1
+    path: Assets/Scenes/VICTORY SCENE.unity
+    guid: 4542a14511ae24903bce8224d0544b63
+  - enabled: 1
+    path: Assets/Scenes/main (tuhoutunut kaupunki).unity
+    guid: ee41e80dba9744adfb04c191d742f44a
   m_configObjects: {}
