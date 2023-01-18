@@ -9,6 +9,7 @@ public class AIHealth : MonoBehaviour
     public float maxHealth;
     [SerializeField]
     private FloatSO ScoreSO;
+    public GameObject deathEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,8 @@ public class AIHealth : MonoBehaviour
 
         if (health <= 0)
         {
-            ScoreSO.Value += 100;
+            Instantiate(deathEffect, transform.position, transform.rotation);
+            ScoreSO.Value += 50;
             Destroy(gameObject);
         }
     }

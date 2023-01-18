@@ -145,7 +145,9 @@ public class CarAIHandler : MonoBehaviour
     {
         Vector2 vectorToTarget = targetPosition - transform.position;
         vectorToTarget.Normalize();
-        
+
+        if (isAvoidingCars)
+            AvoidCars(vectorToTarget, out vectorToTarget);
 
         //Calculate an angle towards the target 
         angleToTarget = Vector2.SignedAngle(transform.up, vectorToTarget);
