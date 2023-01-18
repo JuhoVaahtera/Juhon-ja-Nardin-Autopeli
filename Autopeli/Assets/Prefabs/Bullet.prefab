@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 9117224269406790642}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2055766387
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b1909d074ce01434a96d55eff28d6055, type: 3}
   m_Color: {r: 0.9056604, g: 0.17515129, b: 0.17515129, a: 1}
@@ -101,7 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c8254305daa9f40904f49bab40814e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 15
+  force: 10
+  hitEffect: {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
+  ScoreSO: {fileID: 11400000, guid: c829b5106ea28774589e45ebc67824a4, type: 2}
 --- !u!50 &216717105954514866
 Rigidbody2D:
   serializedVersion: 4
