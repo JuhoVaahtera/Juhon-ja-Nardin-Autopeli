@@ -8,6 +8,18 @@ public class CountDownController : MonoBehaviour
     public int countdownTime;
     public Text countdownDisplay;
 
+    public float timeLeft = 3.0f;
+    public Text startText; // used for showing countdown from 3, 2, 1 
+
+     void Update()
+    {
+        timeLeft -= Time.deltaTime;
+        startText.text = (timeLeft).ToString("0");
+        if (timeLeft < 0)
+        {
+            //Do something useful or Load a new game scene depending on your use-case
+        }
+    }
     
     private void Start()
     {
@@ -22,7 +34,7 @@ public class CountDownController : MonoBehaviour
            
             countdownDisplay.text = countdownTime.ToString();
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSecondsRealtime(1);
 
             countdownTime--;
 
@@ -31,7 +43,7 @@ public class CountDownController : MonoBehaviour
 
         countdownDisplay.text = "GO!";
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSecondsRealtime(1);
 
         countdownDisplay.gameObject.SetActive(false);
 
