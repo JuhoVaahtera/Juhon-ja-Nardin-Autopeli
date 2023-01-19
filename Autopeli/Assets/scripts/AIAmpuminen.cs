@@ -25,6 +25,30 @@ public class AIAmpuminen : MonoBehaviour
 
             Destroy(gameObject);
         }
+
+        if (other.gameObject.CompareTag("AI"))
+        {
+
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("AI2"))
+        {
+
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("AI3"))
+        {
+
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("AI4"))
+        {
+
+            Destroy(gameObject);
+        }
     }
 
     }

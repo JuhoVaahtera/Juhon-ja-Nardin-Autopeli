@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerupSpawn : MonoBehaviour
 {
-    public GameObject prefab1, prefab2, prefab3, prefab4;
+    public GameObject prefab1, prefab2, prefab3, prefab4, prefab5;
 
     public float spawnRate = 20f;
 
@@ -32,6 +32,9 @@ public class PowerupSpawn : MonoBehaviour
                     break;
                 case 4:
                     Instantiate(prefab4, transform.position, Quaternion.identity);
+                    break;
+                case 5:
+                    Instantiate(prefab5, transform.position, Quaternion.identity);
                     break;
             }
 
