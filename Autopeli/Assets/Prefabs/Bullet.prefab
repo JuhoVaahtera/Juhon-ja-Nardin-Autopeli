@@ -176,9 +176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96038097832dbb24daf2af05c75f9960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pHealth: {fileID: 0}
-  aiHealth: {fileID: 0}
-  aiHealth2: {fileID: 0}
-  aiHealth3: {fileID: 0}
-  aiHealth4: {fileID: 0}
+  pHealth: {fileID: 8457246328353903939, guid: d2ec0d9192cc1564bb502a5152dd8776, type: 3}
+  aiHealth: {fileID: 1770299143923098323, guid: 10726697bf67c3440827d3bb4235b578, type: 3}
+  aiHealth2: {fileID: 7078346361518824698, guid: a92bb1b3c6634374f863c06a877d030e, type: 3}
+  aiHealth3: {fileID: 5903533874070890866, guid: a0125762b19cc034eb5775f3a035c29f, type: 3}
+  aiHealth4: {fileID: 7440695905100495709, guid: 01182a4441cb28749b47f14b7e0ce874, type: 3}
   damage: 20
