@@ -10273,6 +10273,7 @@ GameObject:
   - component: {fileID: 2753829114379765179}
   - component: {fileID: 5160143212374578257}
   - component: {fileID: 6758442092676379764}
+  - component: {fileID: 5156647881761964552}
   m_Layer: 0
   m_Name: P1
   m_TagString: Player
@@ -10389,6 +10390,21 @@ MonoBehaviour:
   tiresScreeachingAudioSource: {fileID: 665713417}
   engineAudioSource: {fileID: 28033835}
   carHitAudioSource: {fileID: 1692926375}
+--- !u!114 &5156647881761964552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7464696542750272731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2ddf5d88cb4d9140a0c63b4dc2efb34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  maxHealth: 100
+  healthBar: {fileID: 0}
 --- !u!1 &7464696543267547921
 GameObject:
   m_ObjectHideFlags: 0
