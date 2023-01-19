@@ -10,6 +10,7 @@ public class BulletScript : MonoBehaviour
     private Camera mainCam;
     private Rigidbody2D rb;
     public float force;
+    public float speed;
     public GameObject hitEffect;
     [SerializeField]
     private FloatSO ScoreSO;
@@ -22,7 +23,7 @@ public class BulletScript : MonoBehaviour
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
         Vector3 direction = mousePos - transform.position;
         Vector3 rotation = transform.position - mousePos;
-        rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
+        rb.velocity = new Vector2(direction.x, direction.y).normalized * force * speed;
         float rot = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
     }
