@@ -48,4 +48,8 @@ MonoBehaviour:
   prefab2: {fileID: 1153904133075082735, guid: 93a7567c6cb16834ba2ef4b3088e26e1, type: 3}
   prefab3: {fileID: 5568188807535789316, guid: ab0cc35714c259846a7eee7ce93f61c6, type: 3}
   prefab4: {fileID: 8288933516885561731, guid: 63819c98e1d8faf4597d7dfab7377e20, type: 3}
+  prefab5: {fileID: 1153904133075082735, guid: b98aa19fefcf1d540886eaf162c30f2e, type: 3}
+  prefab6: {fileID: 1153904133075082735, guid: 7cf2828e1318efa4d974a3736dd7de11, type: 3}
+  prefab7: {fileID: 1153904133075082735, guid: 025e3dd222236bb428d43dea0a179e8a, type: 3}
+  prefab8: {fileID: 0}
   spawnRate: 60

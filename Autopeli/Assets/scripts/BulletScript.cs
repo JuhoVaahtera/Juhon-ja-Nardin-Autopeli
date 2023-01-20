@@ -30,6 +30,13 @@ public class BulletScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+
+        if (other.gameObject.CompareTag("rakennukset"))
+        {
+            Instantiate(hitEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
+
         if (other.gameObject.CompareTag("AI"))
         {
             Instantiate(hitEffect, transform.position, transform.rotation);
