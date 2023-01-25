@@ -8,9 +8,11 @@ public class AIAmpuminen : MonoBehaviour
     GameObject target;
     public float speed;
     Rigidbody2D bulletRB;
+    AudioSource bulletHit;
     // Start is called before the first frame update
     void Start()
     {
+        bulletHit = GetComponent<AudioSource>();
         bulletRB = GetComponent<Rigidbody2D>();
         target = GameObject.FindGameObjectWithTag("Player");
         Vector2 moveDir = (target.transform.position - transform.position).normalized * speed;
@@ -22,31 +24,31 @@ public class AIAmpuminen : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-
+            bulletHit.Play();
             Destroy(gameObject);
         }
 
         if (other.gameObject.CompareTag("AI"))
         {
-
+            bulletHit.Play();
             Destroy(gameObject);
         }
 
         if (other.gameObject.CompareTag("AI2"))
         {
-
+            bulletHit.Play();
             Destroy(gameObject);
         }
 
         if (other.gameObject.CompareTag("AI3"))
         {
-
+            bulletHit.Play();
             Destroy(gameObject);
         }
 
         if (other.gameObject.CompareTag("AI4"))
         {
-
+            bulletHit.Play();
             Destroy(gameObject);
         }
     }

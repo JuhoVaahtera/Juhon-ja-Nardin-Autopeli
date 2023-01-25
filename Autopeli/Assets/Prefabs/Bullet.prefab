@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5524497124451904349}
   - component: {fileID: 8642253678513829725}
   - component: {fileID: 9117224269406790642}
+  - component: {fileID: 1980571864}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -101,7 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c8254305daa9f40904f49bab40814e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 10
+  force: 5
+  speed: 3
   hitEffect: {fileID: 100004, guid: f95ff734540a0d749be6571b6cb5b37f, type: 3}
   ScoreSO: {fileID: 11400000, guid: c829b5106ea28774589e45ebc67824a4, type: 2}
 --- !u!50 &216717105954514866
@@ -176,9 +178,105 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96038097832dbb24daf2af05c75f9960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pHealth: {fileID: 8457246328353903939, guid: d2ec0d9192cc1564bb502a5152dd8776, type: 3}
-  aiHealth: {fileID: 1770299143923098323, guid: 10726697bf67c3440827d3bb4235b578, type: 3}
-  aiHealth2: {fileID: 7078346361518824698, guid: a92bb1b3c6634374f863c06a877d030e, type: 3}
-  aiHealth3: {fileID: 5903533874070890866, guid: a0125762b19cc034eb5775f3a035c29f, type: 3}
-  aiHealth4: {fileID: 7440695905100495709, guid: 01182a4441cb28749b47f14b7e0ce874, type: 3}
+  pHealth: {fileID: 0}
+  aiHealth: {fileID: 0}
+  aiHealth2: {fileID: 0}
+  aiHealth3: {fileID: 0}
+  aiHealth4: {fileID: 0}
   damage: 20
+--- !u!82 &1980571864
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279726681893343850}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d360d66077073bd4ca187447d447fd8a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
