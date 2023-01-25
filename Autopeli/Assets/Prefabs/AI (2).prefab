@@ -10319,7 +10319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96038097832dbb24daf2af05c75f9960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pHealth: {fileID: 8457246328353903939, guid: d2ec0d9192cc1564bb502a5152dd8776, type: 3}
+  pHealth: {fileID: 0}
   aiHealth: {fileID: 0}
   aiHealth2: {fileID: 0}
   aiHealth3: {fileID: 0}
@@ -10343,6 +10343,11 @@ MonoBehaviour:
   skillLevel: 1
   fireRate: 1
   nextFireTime: 2
+  detectionRange: 2
+  rotationSpeed: 10
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 512
   shootingRange: 20
   bullet: {fileID: 1634093285137100520, guid: 2272b611df37b0a48a3188548335d3d0, type: 3}
   bulletParent: {fileID: 1375803792401386944}
@@ -10361,7 +10366,7 @@ MonoBehaviour:
   driftFactor: 0.3
   accelerationFactor: 30
   turnFactor: 3.5
-  maxSpeed: 20
+  maxSpeed: 10
 --- !u!114 &5903533874070890866
 MonoBehaviour:
   m_ObjectHideFlags: 0

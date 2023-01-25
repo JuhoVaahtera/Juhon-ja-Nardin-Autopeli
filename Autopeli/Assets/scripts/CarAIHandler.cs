@@ -17,6 +17,10 @@ public class CarAIHandler : MonoBehaviour
     public float fireRate = 1f;
     public float nextFireTime;
 
+    public float detectionRange = 5f;
+    public float rotationSpeed = 3f;
+    public LayerMask obstacleLayer;
+    private Rigidbody2D rb;
 
     //Local variables
     Vector3 targetPosition = Vector3.zero;
@@ -63,6 +67,8 @@ public class CarAIHandler : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         SetMaxSpeedBasedOnSkillLevel(maxSpeed);
+
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame and is frame dependent
@@ -129,7 +135,21 @@ public class CarAIHandler : MonoBehaviour
             Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
             nextFireTime = Time.time + fireRate;
         }
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, detectionRange, obstacleLayer);
+        if (hit.collider != null)
+        {
+            Vector2 avoidDirection = (transform.position - hit.transform.position).normalized;
+            rb.velocity = avoidDirection * maxSpeed;
+        }
+        else
+        {
+            rb.velocity = transform.up * maxSpeed;
+        }
+
     }
+
+
 
     private void OnDrawGizmosSelected()
     {
