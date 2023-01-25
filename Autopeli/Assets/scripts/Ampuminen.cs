@@ -10,12 +10,13 @@ public class Ampuminen : MonoBehaviour {
     public bool canFire;
     private float timer;
     public float timeBetweenFiring;
+    AudioSource shootingSound;
     
     // Use this for initialization
     void Start () 
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-       
+        shootingSound = GetComponent<AudioSource>();
     }
    
     // Update is called once per frame
@@ -41,6 +42,8 @@ public class Ampuminen : MonoBehaviour {
 
        if(Input.GetMouseButton(0) && canFire)
        {
+            shootingSound.Play();
+
             canFire = false;
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);
        }

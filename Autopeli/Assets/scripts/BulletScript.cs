@@ -12,12 +12,16 @@ public class BulletScript : MonoBehaviour
     public float force;
     public float speed;
     public GameObject hitEffect;
+    AudioSource bulletHit;
     [SerializeField]
     private FloatSO ScoreSO;
 
     // Start is called before the first frame update
     void Start()
     {
+        bulletHit = GetComponent<AudioSource>();
+
+
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         rb = GetComponent<Rigidbody2D>();
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
@@ -33,50 +37,54 @@ public class BulletScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("rakennukset"))
         {
+            bulletHit.Play();
             Instantiate(hitEffect, transform.position, transform.rotation);
             Destroy(gameObject);
+            
         }
 
         if (other.gameObject.CompareTag("AI"))
         {
+            bulletHit.Play();
             Instantiate(hitEffect, transform.position, transform.rotation);
             ScoreSO.Value += 20;
             Destroy(gameObject);
+            
         }
 
         if (other.gameObject.CompareTag("AI2"))
         {
+            bulletHit.Play();
             Instantiate(hitEffect, transform.position, transform.rotation);
             ScoreSO.Value += 20;
             Destroy(gameObject);
+            
         }
 
         if (other.gameObject.CompareTag("AI3"))
         {
+            bulletHit.Play();
             Instantiate(hitEffect, transform.position, transform.rotation);
             ScoreSO.Value += 20;
             Destroy(gameObject);
+            
         }
 
         if (other.gameObject.CompareTag("AI4"))
         {
+            bulletHit.Play();
             Instantiate(hitEffect, transform.position, transform.rotation);
             ScoreSO.Value += 20;
             Destroy(gameObject);
+            
         }
 
         if (other.gameObject.CompareTag("Player"))
         {
+            bulletHit.Play();
             Instantiate(hitEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
-
-        if (other.gameObject.CompareTag("Seinä"))
-        {
-            Instantiate(hitEffect, transform.position, transform.rotation);
-            Destroy(gameObject);
-        }
-
     }
 
 
