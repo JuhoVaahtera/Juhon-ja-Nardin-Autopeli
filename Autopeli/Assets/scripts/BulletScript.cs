@@ -12,14 +12,14 @@ public class BulletScript : MonoBehaviour
     public float force;
     public float speed;
     public GameObject hitEffect;
-    AudioSource bulletHit;
+    AudioSource BulletHit;
     [SerializeField]
     private FloatSO ScoreSO;
 
     // Start is called before the first frame update
     void Start()
     {
-        bulletHit = GetComponent<AudioSource>();
+        BulletHit = GetComponent<AudioSource>();
 
 
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -37,7 +37,7 @@ public class BulletScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("rakennukset"))
         {
-            bulletHit.Play();
+            BulletHit.Play();
             Instantiate(hitEffect, transform.position, transform.rotation);
             Destroy(gameObject);
             
@@ -45,7 +45,7 @@ public class BulletScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("AI"))
         {
-            bulletHit.Play();
+            BulletHit.Play();
             Instantiate(hitEffect, transform.position, transform.rotation);
             ScoreSO.Value += 20;
             Destroy(gameObject);
@@ -54,7 +54,7 @@ public class BulletScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("AI2"))
         {
-            bulletHit.Play();
+            BulletHit.Play();
             Instantiate(hitEffect, transform.position, transform.rotation);
             ScoreSO.Value += 20;
             Destroy(gameObject);
@@ -63,7 +63,7 @@ public class BulletScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("AI3"))
         {
-            bulletHit.Play();
+            BulletHit.Play();
             Instantiate(hitEffect, transform.position, transform.rotation);
             ScoreSO.Value += 20;
             Destroy(gameObject);
@@ -72,7 +72,7 @@ public class BulletScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("AI4"))
         {
-            bulletHit.Play();
+            BulletHit.Play();
             Instantiate(hitEffect, transform.position, transform.rotation);
             ScoreSO.Value += 20;
             Destroy(gameObject);
@@ -81,7 +81,7 @@ public class BulletScript : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
-            bulletHit.Play();
+            BulletHit.Play();
             Instantiate(hitEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
