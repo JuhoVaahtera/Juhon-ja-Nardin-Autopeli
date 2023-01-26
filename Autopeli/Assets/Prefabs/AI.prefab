@@ -4995,6 +4995,7 @@ GameObject:
   - component: {fileID: 1074930510502214885}
   - component: {fileID: 1770299143923098323}
   - component: {fileID: 8852224211450179886}
+  - component: {fileID: 6218977289166493784}
   m_Layer: 6
   m_Name: AI
   m_TagString: AI
@@ -5050,7 +5051,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.14670286}
@@ -5133,6 +5134,7 @@ MonoBehaviour:
   skillLevel: 1
   fireRate: 1
   nextFireTime: 2
+  speed: 0
   detectionRange: 2
   rotationSpeed: 10
   obstacleLayer:
@@ -5189,6 +5191,29 @@ MonoBehaviour:
   tiresScreeachingAudioSource: {fileID: 2525386563097897261}
   engineAudioSource: {fileID: 8178422468874108278}
   carHitAudioSource: {fileID: 2696679965559597072}
+--- !u!68 &6218977289166493784
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2929766978235451595}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.5565908, y: -0.04601098}
+  - {x: 0.0009827986, y: 0.8187017}
+  - {x: 0.53119993, y: -0.20023535}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &3573758333108714738
 GameObject:
   m_ObjectHideFlags: 0

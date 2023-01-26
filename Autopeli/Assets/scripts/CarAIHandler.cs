@@ -17,6 +17,8 @@ public class CarAIHandler : MonoBehaviour
     public float fireRate = 1f;
     public float nextFireTime;
 
+    public float speed;
+
     public float detectionRange = 5f;
     public float rotationSpeed = 3f;
     public LayerMask obstacleLayer;
@@ -130,23 +132,33 @@ public class CarAIHandler : MonoBehaviour
     {
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position );
 
-        if (distanceFromPlayer <= shootingRange && nextFireTime <Time.time)
+        ///if (distanceFromPlayer <= shootingRange && nextFireTime <Time.time)
         {
-            Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
-            nextFireTime = Time.time + fireRate;
+            ///Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
+            ///nextFireTime = Time.time + fireRate;
         }
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, detectionRange, obstacleLayer);
-        if (hit.collider != null)
+        ///RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, detectionRange, obstacleLayer);
+       /// if (hit.collider != null)
         {
-            Vector2 avoidDirection = (transform.position - hit.transform.position).normalized;
-            rb.velocity = avoidDirection * maxSpeed;
+            ///Vector2 avoidDirection = (transform.position - hit.transform.position).normalized;
+            ///rb.velocity = avoidDirection * maxSpeed;
         }
-        else
+        ///else
         {
-            rb.velocity = transform.up * maxSpeed;
+            ///rb.velocity = transform.up * maxSpeed;
         }
 
+        this.transform.position += transform.up * Time.deltaTime * speed;
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("rakennukset"))
+        {
+            this.transform.Rotate(transform.rotation.x, transform.rotation.y, transform.rotation.z - 90);
+        }
     }
 
 
