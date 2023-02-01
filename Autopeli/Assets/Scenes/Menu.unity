@@ -631,8 +631,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0069122, y: -0.00041199}
-  m_SizeDelta: {x: 1919.6, y: 1080.2}
+  m_AnchoredPosition: {x: 0.0069, y: -11.7772}
+  m_SizeDelta: {x: 1996.6844, y: 1138.0134}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &494215965
 MonoBehaviour:
@@ -1699,7 +1699,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: main(KAUPUNKI)
+          m_StringArgument: CITY CONSEPT
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 936416054}
