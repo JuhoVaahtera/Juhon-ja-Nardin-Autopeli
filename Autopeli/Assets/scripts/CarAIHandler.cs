@@ -37,8 +37,14 @@ public class CarAIHandler : MonoBehaviour
 
     //Avoidance
     Vector2 avoidanceVectorLerped = Vector3.zero;
+    Vector2 avoidanceVector = Vector2.zero;
+    Vector2 obstacleDetectedPosition = Vector3.zero;
+    Vector2 avoidanceDirection = Vector2.zero;
+    float avoidanceDistance = 0f;
+    int maxRays = 3;
+    float raySpacing = 0.25f;
 
-    
+
 
     //Colliders
     PolygonCollider2D polygonCollider2D;
@@ -104,7 +110,10 @@ public class CarAIHandler : MonoBehaviour
 
         //Send the input to the car controller.
         topDownCarController.SetInputVector(inputVector);
+
+        
     }
+
 
     //AI follows player
     void FollowPlayer()
@@ -128,28 +137,22 @@ public class CarAIHandler : MonoBehaviour
 
     //Shooting
 
+    private List<Transform> _obstacles = new List<Transform>();
+
     private void Update()
     {
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position );
 
-        ///if (distanceFromPlayer <= shootingRange && nextFireTime <Time.time)
-        {
-            ///Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
-            ///nextFireTime = Time.time + fireRate;
-        }
-
-        ///RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.up, detectionRange, obstacleLayer);
-       /// if (hit.collider != null)
-        {
-            ///Vector2 avoidDirection = (transform.position - hit.transform.position).normalized;
-            ///rb.velocity = avoidDirection * maxSpeed;
-        }
-        ///else
-        {
-            ///rb.velocity = transform.up * maxSpeed;
-        }
-
         this.transform.position += transform.up * Time.deltaTime * speed;
+
+        _obstacles.Clear();
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, detectionRange, obstacleLayer);
+
+        foreach (var collider in colliders)
+        {
+            _obstacles.Add(collider.transform);
+        }
 
     }
 
@@ -178,20 +181,47 @@ public class CarAIHandler : MonoBehaviour
         Vector2 vectorToTarget = targetPosition - transform.position;
         vectorToTarget.Normalize();
 
+    //Check for obstacles and steer around them
         if (isAvoidingCars)
-            AvoidCars(vectorToTarget, out vectorToTarget);
+        AvoidCars(vectorToTarget, out vectorToTarget);
 
-        //Calculate an angle towards the target 
-        angleToTarget = Vector2.SignedAngle(transform.up, vectorToTarget);
-        angleToTarget *= -1;
+        float averageDirection = 0f;
+        if (_obstacles.Count > 0)
+        {
+            Vector2 averageObstacleDirection = Vector2.zero;
+            foreach (var obstacle in _obstacles)
+            {
+                Vector2 vectorToObstacle = (Vector2)obstacle.position - (Vector2)transform.position;
+                averageObstacleDirection += vectorToObstacle.normalized;
+            }
+            averageObstacleDirection /= _obstacles.Count;
 
-        //We want the car to turn as much as possible if the angle is greater than 45 degrees and we wan't it to smooth out so if the angle is small we want the AI to make smaller corrections. 
-        float steerAmount = angleToTarget / 45.0f;
+            averageDirection = Vector2.SignedAngle(transform.up, averageObstacleDirection);
+        }
 
-        //Clamp steering to between -1 and 1.
-        steerAmount = Mathf.Clamp(steerAmount, -1.0f, 1.0f);
+        float steerInput = Mathf.Clamp(averageDirection * rotationSpeed, -1f, 1f);
 
-        return steerAmount;
+        return steerInput;
+    }
+
+    bool IsObstacleInWay(Vector2 vectorToTarget, out Vector2 avoidanceVector)
+    {
+        //Shoot a ray in the direction of the target and check for obstacles
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, vectorToTarget, detectionRange, obstacleLayer);
+
+        if (hit.collider != null)
+        {
+            //Obstacle detected, calculate an avoidance vector that steers around the obstacle
+            Vector2 perpendicular = Vector2.Perpendicular(hit.normal).normalized;
+            avoidanceVector = (vectorToTarget + perpendicular * 2).normalized;
+
+            return true;
+        }
+        else
+        {
+            avoidanceVector = Vector2.zero;
+            return false;
+        }
     }
 
     float ApplyThrottleOrBrake(float inputX)
