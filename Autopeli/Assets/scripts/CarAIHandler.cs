@@ -123,8 +123,21 @@ public class CarAIHandler : MonoBehaviour
 
         if (targetTransform != null)
             targetPosition = targetTransform.position;
+
+        float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
+
+        if(distanceFromPlayer <= shootingRange)
+        {
+            Shoot();
+        }
     }
-    
+
+    void Shoot()
+    {
+        GameObject b = Instantiate(bullet, bulletParent.transform.position, Quaternion.identity);
+        b.GetComponent<Rigidbody2D>().velocity = (player.position - transform.position).normalized * 10;
+    }
+
     //AI follows the mouse position
     void FollowMousePosition()
     {
