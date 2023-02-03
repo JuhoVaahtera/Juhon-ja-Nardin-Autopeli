@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public float health;
     public float maxHealth;
     public Image healthBar;
+
     // Start is called before the first frame update
     void Start()
     {
