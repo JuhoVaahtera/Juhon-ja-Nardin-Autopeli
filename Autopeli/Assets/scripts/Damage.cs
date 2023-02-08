@@ -13,7 +13,7 @@ public class Damage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pHealth = FindObjectOfType<PlayerHealth>();  
+        
     }
 
     // Update is called once per frame
