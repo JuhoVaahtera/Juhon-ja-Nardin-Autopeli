@@ -35,7 +35,7 @@ public class CarAIHandler : MonoBehaviour
     List<Vector2> temporaryWaypoints = new List<Vector2>();
     float angleToTarget = 0;
 
-    //Avoidance (osa näistä on vanhoja joita olen koittanut)
+    //Avoidance
     Vector2 avoidanceVectorLerped = Vector3.zero;
     Vector2 avoidanceVector = Vector2.zero;
     Vector2 obstacleDetectedPosition = Vector3.zero;
@@ -123,14 +123,8 @@ public class CarAIHandler : MonoBehaviour
 
         if (targetTransform != null)
             targetPosition = targetTransform.position;
-
-        float distanceFromPlayer = Vector2.Distance(player.position, transform.position);
-
-      
     }
-
     
-
     //AI follows the mouse position
     void FollowMousePosition()
     {
@@ -148,6 +142,18 @@ public class CarAIHandler : MonoBehaviour
     private void Update()
     {
         float distanceFromPlayer = Vector2.Distance(player.position, transform.position );
+
+        this.transform.position += transform.up * Time.deltaTime * speed;
+
+        _obstacles.Clear();
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, detectionRange, obstacleLayer);
+
+        foreach (var collider in colliders)
+        {
+            _obstacles.Add(collider.transform);
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -218,8 +224,6 @@ public class CarAIHandler : MonoBehaviour
         }
     }
 
-
-
     float ApplyThrottleOrBrake(float inputX)
     {
         //If we are going too fast then do not accelerate further. 
@@ -258,7 +262,7 @@ public class CarAIHandler : MonoBehaviour
     }
 
 
-    //Finds the nearest point on a line (ei käytössä tällä hetkellä)
+    //Finds the nearest point on a line. 
     Vector2 FindNearestPointOnLine(Vector2 lineStartPosition, Vector2 lineEndPosition, Vector2 point)
     {
         //Get heading as a vector
