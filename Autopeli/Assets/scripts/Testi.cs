@@ -13,7 +13,7 @@ public class Testi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pelaaja = GameObject.Find("Cuubi").transform;
+        pelaaja = GameObject.Find("PlayerCar").transform;
         agentti = GetComponent<NavMeshAgent>();
         m‰‰r‰np‰‰ = agentti.destination;
     }
