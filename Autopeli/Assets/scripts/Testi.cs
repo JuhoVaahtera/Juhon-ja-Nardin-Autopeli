@@ -7,7 +7,7 @@ public class Testi : MonoBehaviour
 {
     NavMeshAgent agentti;
     Transform pelaaja;
-    Vector3 m‰‰r‰np‰‰;
+    Vector3 m√§√§r√§np√§√§;
 
 
     // Start is called before the first frame update
@@ -15,16 +15,16 @@ public class Testi : MonoBehaviour
     {
         pelaaja = GameObject.Find("PlayerCar").transform;
         agentti = GetComponent<NavMeshAgent>();
-        m‰‰r‰np‰‰ = agentti.destination;
+        m√§√§r√§np√§√§ = agentti.destination;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(pelaaja.position, m‰‰r‰np‰‰) > 1.0f)
+        if(Vector3.Distance(pelaaja.position, m√§√§r√§np√§√§) > 1.0f)
         {
-            m‰‰r‰np‰‰ = pelaaja.position;
-            agentti.destination = m‰‰r‰np‰‰;
+            m√§√§r√§np√§√§ = pelaaja.position;
+            agentti.destination = m√§√§r√§np√§√§;
         }
     }
 }
