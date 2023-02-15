@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using UnityEngine.AI;
 
 public class CarAIHandler : MonoBehaviour
 {
@@ -45,8 +44,7 @@ public class CarAIHandler : MonoBehaviour
     int maxRays = 3;
     float raySpacing = 0.25f;
 
-    NavMeshAgent agentti;
-    Vector3 määränpää;
+
 
     //Colliders
     PolygonCollider2D polygonCollider2D;
@@ -76,10 +74,6 @@ public class CarAIHandler : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        agentti = GetComponent<NavMeshAgent>();
-        määränpää = agentti.destination;
-
-
         SetMaxSpeedBasedOnSkillLevel(maxSpeed);
 
         rb = GetComponent<Rigidbody2D>();
@@ -151,10 +145,13 @@ public class CarAIHandler : MonoBehaviour
 
         this.transform.position += transform.up * Time.deltaTime * speed;
 
-        if(Vector3.Distance(player.position, määränpää) > 1.0f)
+        _obstacles.Clear();
+
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, detectionRange, obstacleLayer);
+
+        foreach (var collider in colliders)
         {
-            määränpää = player.position;
-            agentti.destination = määränpää;
+            _obstacles.Add(collider.transform);
         }
 
     }
