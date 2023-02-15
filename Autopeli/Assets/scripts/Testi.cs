@@ -9,10 +9,15 @@ public class Testi : MonoBehaviour
     Transform pelaaja;
     Vector3 määränpää;
 
+    public Vector3 _centerOfMass;
+
+    private Rigidbody carRb;
 
     // Start is called before the first frame update
     void Start()
     {
+        carRb = GetComponent<Rigidbody>();
+        carRb.centerOfMass = _centerOfMass;
         pelaaja = GameObject.Find("PlayerCar").transform;
         agentti = GetComponent<NavMeshAgent>();
         määränpää = agentti.destination;
