@@ -5,6 +5,7 @@ using UnityEngine;
 public class MiniMap : MonoBehaviour
 {
     public Transform player;
+    public Vector3 offset;
 
     // Update is called once per frame
     void LateUpdate()
@@ -14,6 +15,7 @@ public class MiniMap : MonoBehaviour
         transform.position = newPosition;
 
         transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
+        transform.position = player.position + offset;
         
     }
 }
