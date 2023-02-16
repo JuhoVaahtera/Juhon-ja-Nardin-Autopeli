@@ -6,15 +6,9 @@ public class Powerup : MonoBehaviour
 {
     public PowerupEffect powerupEffect;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
-        {
-            Destroy(gameObject);
-            powerupEffect.Apply(other.gameObject);
-        }
-
-        if (other.gameObject.tag == "Bullet")
         {
             Destroy(gameObject);
             powerupEffect.Apply(other.gameObject);
