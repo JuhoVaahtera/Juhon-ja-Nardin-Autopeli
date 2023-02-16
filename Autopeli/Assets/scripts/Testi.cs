@@ -18,6 +18,7 @@ public class Testi : MonoBehaviour
     {
         carRb = GetComponent<Rigidbody>();
         carRb.centerOfMass = _centerOfMass;
+
         pelaaja = GameObject.Find("PlayerCar").transform;
         agentti = GetComponent<NavMeshAgent>();
         määränpää = agentti.destination;
