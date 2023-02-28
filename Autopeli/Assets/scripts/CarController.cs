@@ -11,6 +11,8 @@ public class CarController : MonoBehaviour
         Rear
     }
 
+    public GameObject hitEffect;
+
     [Serializable]
     public struct Wheel
     {
@@ -44,6 +46,14 @@ public class CarController : MonoBehaviour
         carRb.centerOfMass = _centerOfMass;
 
         carLights = GetComponent<CarLights>();
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("rakennukset"))
+        {
+            Instantiate(hitEffect, transform.position, transform.rotation);
+        }
     }
 
     void Update()

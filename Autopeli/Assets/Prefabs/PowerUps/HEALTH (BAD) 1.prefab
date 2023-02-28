@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerupEffect: {fileID: 11400000, guid: 61fe6c8ada506f5479d8065840a73543, type: 2}
+  ScoreSO: {fileID: 11400000, guid: c829b5106ea28774589e45ebc67824a4, type: 2}
 --- !u!95 &2828270837010504506
 Animator:
   serializedVersion: 4

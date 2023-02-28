@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public float health;
     public float maxHealth;
     public Image healthBar;
+    public GameObject deathEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
 
         if(health <= 0)
         {
-            
+            Instantiate(deathEffect, transform.position, transform.rotation);
             Destroy(gameObject);
             SceneManager.LoadScene("Over");
         }
